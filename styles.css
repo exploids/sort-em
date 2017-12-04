@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.4em;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(#5C574F, #48483A);
+}
+
+button {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.0);
+  border-radius: 3px;
+  padding: 6px;
+  outline: 0;
+  transition: all 0.1s ease;
+}
+
+button:hover, button:focus {
+  color: rgba(255, 255, 255, 1.0);
+}
+
+button:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+button[disabled] {
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  padding: 6px;
+  color: #fff;
+  outline: 0;
+}
+
+.InputGroup {
+  display: grid;
+  grid-template: 'inp but' auto / 1fr auto;
+  grid-gap: 8px;
+  padding: 8px;
+}
+
+.InputGroup input {
+  grid-area: inp;
+}
+
+.InputGroup button {
+  grid-area: but;
+}
+
+.ButtonGroup {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 8px;
+  padding: 8px;
+}
+
+.SimpleList {
+  list-style-type: none;
+  overflow: auto;
+}
+
+.SimpleList li {
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.SimpleList li.empty {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.View {
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.View.main {
+  grid-template: 'add' auto '.' 1fr 'list' auto '.' 1fr 'actions' auto / 1fr;
+}
+
+.View.main #add {grid-area: add}
+.View.main #list {grid-area: list}
+.View.main #actions {grid-area: actions}
+
+.View.decide {
+  grid-template: 1fr 1fr / 1fr;
+  background-image: linear-gradient(#849483, #4E937A);
+}
+
+.View.decide .or {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-top: -0.5em;
+}
+
+.View.decide .decide {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.View.decide .decide div {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -0.5em;
+}
+
+.View.result {
+  grid-template: '.' 1fr 'list' auto '.' 1fr 'actions' auto / 1fr;
+  background-image: linear-gradient(#928779, #5E5768);
+}
+
+.View.result #list {grid-area: list}
+.View.result #actions {grid-area: actions}
+
+.transition-list-move {
+  transition: transform .5s ease;
+}
+
+.transition-list-enter-active,
+.transition-list-leave-active {
+	transition: all .2s ease;
+  overflow: hidden;
+}
+
+.transition-list-enter-to,
+.transition-list-leave {
+	line-height: 1.2em;
+  opacity: 1;
+}
+
+.transition-list-enter,
+.transition-list-leave-to {
+	line-height: 0em;
+  opacity: 0;
+}
+
+.transition-page-enter-active,
+.transition-page-leave-active {
+	transition: all .2s ease;
+  pointer-events: none;
+}
+
+.transition-page-enter-to,
+.transition-page-leave {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.transition-page-enter {
+  opacity: 0;
+  transform: translateX(5%);
+}
+
+.transition-page-leave-to {
+  opacity: 0;
+  transform: translateX(-5%);
+}
+
+.transition-slide-enter-active,
+.transition-slide-leave-active {
+	transition: all .2s ease;
+}
+
+.transition-slide-enter-to,
+.transition-slide-leave {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.transition-slide-enter {
+  opacity: 0;
+  transform: translateX(5%);
+}
+
+.transition-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-5%);
+}
